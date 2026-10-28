@@ -1,0 +1,385 @@
+// FactoryHMI - Assembly Line A, PLC program for the Virtual PLC (S7-1200, CPU 1214C)
+// Import: Virtual PLC > Program > SCL source > Import .scl source ...; then Ports: S7 server on,
+// "Permit access with PUT/GET" on. DB10 "HMI" must stay non-optimized (S7 absolute access).
+// See SPEC_FactoryHMI.md section 9.
+
+DATA_BLOCK "HMI"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+NON_RETAIN
+   VAR
+      ST10_State : Int := 0; // ST10 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      ST10_FaultCode : Int := 0; // 1..6 faults, 7 over-temperature
+      ST10_Speed : Real := 0.0; // parts/min
+      ST10_SpeedSP : Real := 62.0; // parts/min, written by the HMI
+      ST10_Temp : Real := 32.0; // degC
+      ST10_Vib : Real := 0.8; // mm/s
+      ST10_Power : Real := 0.0; // kW
+      ST10_Count : DInt := 0; // parts processed
+      ST10_Reject : DInt := 0; // parts rejected
+      ST10_InBuf : Int := 0; // parts waiting in front
+      ST10_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      ST10_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+      ST10_CmdReset : Bool := FALSE; // HMI pulse, PLC clears
+      ST10_Enabled : Bool := FALSE; // station start latch (status)
+      ST20_State : Int := 0; // ST20 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      ST20_FaultCode : Int := 0; // 1..6 faults, 7 over-temperature
+      ST20_Speed : Real := 0.0; // parts/min
+      ST20_SpeedSP : Real := 62.0; // parts/min, written by the HMI
+      ST20_Temp : Real := 32.0; // degC
+      ST20_Vib : Real := 0.8; // mm/s
+      ST20_Power : Real := 0.0; // kW
+      ST20_Count : DInt := 0; // parts processed
+      ST20_Reject : DInt := 0; // parts rejected
+      ST20_InBuf : Int := 4; // parts waiting in front
+      ST20_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      ST20_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+      ST20_CmdReset : Bool := FALSE; // HMI pulse, PLC clears
+      ST20_Enabled : Bool := FALSE; // station start latch (status)
+      ST30_State : Int := 0; // ST30 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      ST30_FaultCode : Int := 0; // 1..6 faults, 7 over-temperature
+      ST30_Speed : Real := 0.0; // parts/min
+      ST30_SpeedSP : Real := 62.0; // parts/min, written by the HMI
+      ST30_Temp : Real := 32.0; // degC
+      ST30_Vib : Real := 0.8; // mm/s
+      ST30_Power : Real := 0.0; // kW
+      ST30_Count : DInt := 0; // parts processed
+      ST30_Reject : DInt := 0; // parts rejected
+      ST30_InBuf : Int := 4; // parts waiting in front
+      ST30_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      ST30_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+      ST30_CmdReset : Bool := FALSE; // HMI pulse, PLC clears
+      ST30_Enabled : Bool := FALSE; // station start latch (status)
+      ST40_State : Int := 0; // ST40 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      ST40_FaultCode : Int := 0; // 1..6 faults, 7 over-temperature
+      ST40_Speed : Real := 0.0; // parts/min
+      ST40_SpeedSP : Real := 62.0; // parts/min, written by the HMI
+      ST40_Temp : Real := 32.0; // degC
+      ST40_Vib : Real := 0.8; // mm/s
+      ST40_Power : Real := 0.0; // kW
+      ST40_Count : DInt := 0; // parts processed
+      ST40_Reject : DInt := 0; // parts rejected
+      ST40_InBuf : Int := 4; // parts waiting in front
+      ST40_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      ST40_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+      ST40_CmdReset : Bool := FALSE; // HMI pulse, PLC clears
+      ST40_Enabled : Bool := FALSE; // station start latch (status)
+      ST50_State : Int := 0; // ST50 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      ST50_FaultCode : Int := 0; // 1..6 faults, 7 over-temperature
+      ST50_Speed : Real := 0.0; // parts/min
+      ST50_SpeedSP : Real := 62.0; // parts/min, written by the HMI
+      ST50_Temp : Real := 32.0; // degC
+      ST50_Vib : Real := 0.8; // mm/s
+      ST50_Power : Real := 0.0; // kW
+      ST50_Count : DInt := 0; // parts processed
+      ST50_Reject : DInt := 0; // parts rejected
+      ST50_InBuf : Int := 4; // parts waiting in front
+      ST50_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      ST50_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+      ST50_CmdReset : Bool := FALSE; // HMI pulse, PLC clears
+      ST50_Enabled : Bool := FALSE; // station start latch (status)
+      ST60_State : Int := 0; // ST60 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      ST60_FaultCode : Int := 0; // 1..6 faults, 7 over-temperature
+      ST60_Speed : Real := 0.0; // parts/min
+      ST60_SpeedSP : Real := 62.0; // parts/min, written by the HMI
+      ST60_Temp : Real := 32.0; // degC
+      ST60_Vib : Real := 0.8; // mm/s
+      ST60_Power : Real := 0.0; // kW
+      ST60_Count : DInt := 0; // parts processed
+      ST60_Reject : DInt := 0; // parts rejected
+      ST60_InBuf : Int := 4; // parts waiting in front
+      ST60_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      ST60_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+      ST60_CmdReset : Bool := FALSE; // HMI pulse, PLC clears
+      ST60_Enabled : Bool := FALSE; // station start latch (status)
+      LINE_Heartbeat : Int := 0; // counts every cycle
+      LINE_Running : Bool := FALSE; // line run latch (status)
+      LINE_CmdStart : Bool := FALSE; // HMI pulse, PLC clears
+      LINE_CmdStop : Bool := FALSE; // HMI pulse, PLC clears
+   END_VAR
+BEGIN
+END_DATA_BLOCK
+
+FUNCTION_BLOCK "Station" // FB1
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+// One station of Assembly Line A: start/stop latch, interlocks, state, speed ramp, temperature, vibration, power, part counter. Called once per station from OB1; the HMI only sets the Cmd pulses and SpeedSP in DB10 "HMI".
+   VAR_INPUT
+      LineRun : Bool; // line run latch
+      LineStart : Bool; // LINE start pulse: enables the station
+      Tick : Bool; // one cycle every 100 ms
+      InAvail : Bool; // a part is waiting in front
+      OutFree : Bool; // room in the output buffer
+      SpeedMax : Real; // parts/min
+      TempRise : Real; // degC at full load
+      TempTrip : Real; // over-temperature trip, degC
+      PowerRated : Real; // kW
+      Seed : DInt; // random seed of this station
+   END_VAR
+   VAR_OUTPUT
+      PartDone : Bool; // one part finished in this cycle
+   END_VAR
+   VAR_IN_OUT
+      State : Int; // 0 stop 1 run 2 starved 3 blocked 4 fault 5 maint
+      FaultCode : Int; // 1..6 faults, 7 over-temperature
+      Speed : Real;
+      SpeedSP : Real;
+      Temp : Real;
+      Vib : Real;
+      Power : Real;
+      Count : DInt;
+      CmdStart : Bool;
+      CmdStop : Bool;
+      CmdReset : Bool;
+      Enabled : Bool;
+   END_VAR
+   VAR
+      Progress : Real; // fraction of the current part
+      Rnd : DInt; // random generator state (0: take Seed)
+      Timer : Real; // s in fault / maintenance
+   END_VAR
+   VAR_TEMP
+      Load : Real;
+      Target : Real;
+      R : Real; // random 0..1
+   END_VAR
+BEGIN
+   REGION Operator requests and interlocks
+      // The HMI only requests: start is refused while a fault / maintenance is active, reset only when the station has cooled below the trip limit - 2 degC. Every request pulse is cleared here.
+      IF #LineStart AND #State < 4 THEN
+          #Enabled := TRUE;
+      END_IF;
+      IF #CmdStart AND #State < 4 THEN
+          #Enabled := TRUE;
+      END_IF;
+      IF #CmdStop THEN
+          #Enabled := FALSE;
+      END_IF;
+      IF #CmdReset AND #State = 4 AND #Temp < #TempTrip - 2.0 THEN
+          #State := 0;
+          #FaultCode := 0;
+          #Timer := 0.0;
+      END_IF;
+      #CmdStart := FALSE;
+      #CmdStop := FALSE;
+      #CmdReset := FALSE;
+      #SpeedSP := LIMIT(MN := 10.0, IN := #SpeedSP, MX := #SpeedMax);
+   END_REGION
+   REGION Process model (every 100 ms)
+      // State machine (fault -> maintenance after 60 s -> stopped after 20 s), speed ramp, parts, temperature with 20 s lag, vibration, power, over-temperature trip, rare random faults.
+      #PartDone := FALSE;
+      IF NOT #Tick THEN
+          RETURN;
+      END_IF;
+
+      // random 0..1 (Lehmer generator, period 65536)
+      IF #Rnd <= 0 THEN
+          #Rnd := #Seed MOD 65536 + 1;
+      END_IF;
+      #Rnd := (#Rnd * 75) MOD 65537;
+      #R := DINT_TO_REAL(#Rnd) / 65537.0;
+
+      // state machine
+      IF #State = 4 THEN
+          #Timer := #Timer + 0.1;
+          IF #Timer >= 60.0 THEN
+              #State := 5;
+              #Timer := 0.0;
+          END_IF;
+      ELSIF #State = 5 THEN
+          #Timer := #Timer + 0.1;
+          IF #Timer >= 20.0 THEN
+              #State := 0;
+              #FaultCode := 0;
+              #Timer := 0.0;
+          END_IF;
+      ELSIF NOT (#Enabled AND #LineRun) THEN
+          #State := 0;
+      ELSIF NOT #InAvail THEN
+          #State := 2;
+      ELSIF NOT #OutFree THEN
+          #State := 3;
+      ELSE
+          #State := 1;
+      END_IF;
+
+      // speed and parts
+      IF #State = 1 THEN
+          #Speed := #Speed + (#SpeedSP - #Speed) * 0.15;
+          #Progress := #Progress + #Speed / 600.0;
+          IF #Progress >= 1.0 THEN
+              #Progress := #Progress - 1.0;
+              #PartDone := TRUE;
+              #Count := #Count + 1;
+          END_IF;
+      ELSE
+          #Speed := #Speed * 0.7;
+      END_IF;
+
+      // process values
+      #Load := #Speed / #SpeedMax;
+      #Target := 32.0 + #TempRise * #Load * (0.9 + 0.25 * #SpeedSP / #SpeedMax);
+      #Temp := #Temp + (#Target - #Temp) * 0.005 + (#R - 0.5) * 0.1;
+      #Vib := #Vib + (0.6 + 4.2 * #Load * #Load - #Vib) * 0.2 + (#R - 0.5) * 0.1;
+      IF #Vib < 0.0 THEN
+          #Vib := 0.0;
+      END_IF;
+      IF #State = 1 THEN
+          #Power := #PowerRated * (0.25 + 0.75 * #Load);
+      ELSIF #State = 2 OR #State = 3 THEN
+          #Power := #PowerRated * 0.2;
+      ELSE
+          #Power := #PowerRated * 0.05;
+      END_IF;
+
+      // over-temperature trip, random faults (about 1 per 30 min per running station)
+      IF #State >= 1 AND #State <= 3 AND #Temp > #TempTrip THEN
+          #State := 4;
+          #FaultCode := 7;
+          #Timer := 0.0;
+      ELSIF #State = 1 AND #R < 0.0000556 THEN
+          #State := 4;
+          #FaultCode := REAL_TO_INT(#R * 1000000.0) MOD 6 + 1;
+          #Timer := 0.0;
+      END_IF;
+   END_REGION
+END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK "Line" // FB2
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+// Assembly Line A: line run latch, 100 ms tick, the six stations (multi-instances of "Station") and the part buffers between them. All HMI signals are in DB10 "HMI" (non-optimized, absolute access for S7 communication).
+   VAR
+      TickTimer : TON_TIME; // 100 ms time base
+      Tick : Bool; // TRUE for one cycle every 100 ms
+      S10 : "Station"; // Feeder
+      S20 : "Station"; // Press
+      S30 : "Station"; // Welder
+      S40 : "Station"; // Paint Booth
+      S50 : "Station"; // Vision Inspect
+      S60 : "Station"; // Packer
+   END_VAR
+   VAR_TEMP
+      LineStart : Bool;
+      Done10 : Bool;
+      Done20 : Bool;
+      Done30 : Bool;
+      Done40 : Bool;
+      Done50 : Bool;
+      Done60 : Bool;
+   END_VAR
+BEGIN
+   REGION Heartbeat, time base, line requests
+      // LINE_Heartbeat counts every cycle (the HMI sends no command while it stands still). LINE start / stop are request pulses from the HMI, cleared here.
+      "HMI".LINE_Heartbeat := "HMI".LINE_Heartbeat + 1;
+
+      #TickTimer(IN := NOT #Tick, PT := T#100MS);
+      #Tick := #TickTimer.Q;
+
+      #LineStart := "HMI".LINE_CmdStart;
+      IF "HMI".LINE_CmdStart THEN
+          "HMI".LINE_Running := TRUE;
+      END_IF;
+      IF "HMI".LINE_CmdStop THEN
+          "HMI".LINE_Running := FALSE;
+      END_IF;
+      "HMI".LINE_CmdStart := FALSE;
+      "HMI".LINE_CmdStop := FALSE;
+   END_REGION
+   REGION Stations ST10 .. ST60
+      // Limits per station as in SPEC_FactoryHMI section 5.1 (speed max, temperature rise / trip, rated power). A station runs when it has a part in front and room behind it.
+      #S10(LineRun := "HMI".LINE_Running, LineStart := #LineStart, Tick := #Tick,
+           InAvail := TRUE, OutFree := "HMI".ST20_InBuf < 12,
+           SpeedMax := 80.0, TempRise := 18.0, TempTrip := 80.0, PowerRated := 4.5, Seed := 1070,
+           PartDone => #Done10,
+           State := "HMI".ST10_State, FaultCode := "HMI".ST10_FaultCode, Speed := "HMI".ST10_Speed, SpeedSP := "HMI".ST10_SpeedSP,
+           Temp := "HMI".ST10_Temp, Vib := "HMI".ST10_Vib, Power := "HMI".ST10_Power, Count := "HMI".ST10_Count,
+           CmdStart := "HMI".ST10_CmdStart, CmdStop := "HMI".ST10_CmdStop, CmdReset := "HMI".ST10_CmdReset, Enabled := "HMI".ST10_Enabled);
+      #S20(LineRun := "HMI".LINE_Running, LineStart := #LineStart, Tick := #Tick,
+           InAvail := "HMI".ST20_InBuf > 0, OutFree := "HMI".ST30_InBuf < 12,
+           SpeedMax := 70.0, TempRise := 38.0, TempTrip := 88.0, PowerRated := 22.0, Seed := 1140,
+           PartDone => #Done20,
+           State := "HMI".ST20_State, FaultCode := "HMI".ST20_FaultCode, Speed := "HMI".ST20_Speed, SpeedSP := "HMI".ST20_SpeedSP,
+           Temp := "HMI".ST20_Temp, Vib := "HMI".ST20_Vib, Power := "HMI".ST20_Power, Count := "HMI".ST20_Count,
+           CmdStart := "HMI".ST20_CmdStart, CmdStop := "HMI".ST20_CmdStop, CmdReset := "HMI".ST20_CmdReset, Enabled := "HMI".ST20_Enabled);
+      #S30(LineRun := "HMI".LINE_Running, LineStart := #LineStart, Tick := #Tick,
+           InAvail := "HMI".ST30_InBuf > 0, OutFree := "HMI".ST40_InBuf < 12,
+           SpeedMax := 70.0, TempRise := 52.0, TempTrip := 95.0, PowerRated := 35.0, Seed := 1210,
+           PartDone => #Done30,
+           State := "HMI".ST30_State, FaultCode := "HMI".ST30_FaultCode, Speed := "HMI".ST30_Speed, SpeedSP := "HMI".ST30_SpeedSP,
+           Temp := "HMI".ST30_Temp, Vib := "HMI".ST30_Vib, Power := "HMI".ST30_Power, Count := "HMI".ST30_Count,
+           CmdStart := "HMI".ST30_CmdStart, CmdStop := "HMI".ST30_CmdStop, CmdReset := "HMI".ST30_CmdReset, Enabled := "HMI".ST30_Enabled);
+      #S40(LineRun := "HMI".LINE_Running, LineStart := #LineStart, Tick := #Tick,
+           InAvail := "HMI".ST40_InBuf > 0, OutFree := "HMI".ST50_InBuf < 12,
+           SpeedMax := 75.0, TempRise := 28.0, TempTrip := 68.0, PowerRated := 18.0, Seed := 1280,
+           PartDone => #Done40,
+           State := "HMI".ST40_State, FaultCode := "HMI".ST40_FaultCode, Speed := "HMI".ST40_Speed, SpeedSP := "HMI".ST40_SpeedSP,
+           Temp := "HMI".ST40_Temp, Vib := "HMI".ST40_Vib, Power := "HMI".ST40_Power, Count := "HMI".ST40_Count,
+           CmdStart := "HMI".ST40_CmdStart, CmdStop := "HMI".ST40_CmdStop, CmdReset := "HMI".ST40_CmdReset, Enabled := "HMI".ST40_Enabled);
+      #S50(LineRun := "HMI".LINE_Running, LineStart := #LineStart, Tick := #Tick,
+           InAvail := "HMI".ST50_InBuf > 0, OutFree := "HMI".ST60_InBuf < 12,
+           SpeedMax := 90.0, TempRise := 12.0, TempTrip := 62.0, PowerRated := 2.5, Seed := 1350,
+           PartDone => #Done50,
+           State := "HMI".ST50_State, FaultCode := "HMI".ST50_FaultCode, Speed := "HMI".ST50_Speed, SpeedSP := "HMI".ST50_SpeedSP,
+           Temp := "HMI".ST50_Temp, Vib := "HMI".ST50_Vib, Power := "HMI".ST50_Power, Count := "HMI".ST50_Count,
+           CmdStart := "HMI".ST50_CmdStart, CmdStop := "HMI".ST50_CmdStop, CmdReset := "HMI".ST50_CmdReset, Enabled := "HMI".ST50_Enabled);
+      #S60(LineRun := "HMI".LINE_Running, LineStart := #LineStart, Tick := #Tick,
+           InAvail := "HMI".ST60_InBuf > 0, OutFree := TRUE,
+           SpeedMax := 80.0, TempRise := 16.0, TempTrip := 75.0, PowerRated := 6.0, Seed := 1420,
+           PartDone => #Done60,
+           State := "HMI".ST60_State, FaultCode := "HMI".ST60_FaultCode, Speed := "HMI".ST60_Speed, SpeedSP := "HMI".ST60_SpeedSP,
+           Temp := "HMI".ST60_Temp, Vib := "HMI".ST60_Vib, Power := "HMI".ST60_Power, Count := "HMI".ST60_Count,
+           CmdStart := "HMI".ST60_CmdStart, CmdStop := "HMI".ST60_CmdStop, CmdReset := "HMI".ST60_CmdReset, Enabled := "HMI".ST60_Enabled);
+   END_REGION
+   REGION Part buffers and rejects
+      // A finished part leaves the station's input buffer and enters the next one. ST50 Vision rejects every 50th part (2 %) and 1 more in 10 while the welder is above 80 degC; rejected parts leave the line. Parts out of ST60 are good parts (ST60_Count).
+      IF #Done10 THEN
+          "HMI".ST20_InBuf := "HMI".ST20_InBuf + 1;
+      END_IF;
+      IF #Done20 THEN
+          "HMI".ST20_InBuf := "HMI".ST20_InBuf - 1;
+          "HMI".ST30_InBuf := "HMI".ST30_InBuf + 1;
+      END_IF;
+      IF #Done30 THEN
+          "HMI".ST30_InBuf := "HMI".ST30_InBuf - 1;
+          "HMI".ST40_InBuf := "HMI".ST40_InBuf + 1;
+      END_IF;
+      IF #Done40 THEN
+          "HMI".ST40_InBuf := "HMI".ST40_InBuf - 1;
+          "HMI".ST50_InBuf := "HMI".ST50_InBuf + 1;
+      END_IF;
+      IF #Done50 THEN
+          "HMI".ST50_InBuf := "HMI".ST50_InBuf - 1;
+          IF "HMI".ST50_Count MOD 50 = 7 OR ("HMI".ST30_Temp > 80.0 AND "HMI".ST50_Count MOD 10 = 3) THEN
+              "HMI".ST50_Reject := "HMI".ST50_Reject + 1;
+          ELSE
+              "HMI".ST60_InBuf := "HMI".ST60_InBuf + 1;
+          END_IF;
+      END_IF;
+      IF #Done60 THEN
+          "HMI".ST60_InBuf := "HMI".ST60_InBuf - 1;
+      END_IF;
+   END_REGION
+END_FUNCTION_BLOCK
+
+DATA_BLOCK "Line_DB"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+"Line"
+BEGIN
+END_DATA_BLOCK
+
+ORGANIZATION_BLOCK "Main" // OB1
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT
+      Initial_Call : Bool; // Initial call of this OB
+      Remanence : Bool; // =True, if remanent data are available
+   END_VAR
+BEGIN
+   REGION Assembly Line A
+      // The line with its six stations; the FactoryHMI talks to it through DB10 "HMI" (S7 communication, TCP 102).
+      "Line_DB"();
+   END_REGION
+END_ORGANIZATION_BLOCK

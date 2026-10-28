@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="824" viewBox="0 0 760 824" font-family="Leelawadee UI, Tahoma, Segoe UI, sans-serif" role="img" aria-label="Measured and specified palette">
+<title>Measured and specified palette</title>
+<rect width="760" height="824" fill="#fcfcfb"/>
+<text x="20" y="28" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="bold">Colour palette</text>
+<text x="20" y="48" font-size="12" fill="#8a8984" text-anchor="start" font-weight="normal">A: k-means (k = 14) on 40 000 pixels of the reference. B: the constants used in uPalette.pas.</text>
+<text x="20" y="64" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="bold">A. Measured clusters (share of pixels, mean height in image)</text>
+<rect x="20" y="76" width="40" height="20" rx="3" fill="#08375D" stroke="#e4e3df"/>
+<text x="70" y="91" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#08375D</text>
+<rect x="150" y="80" width="300.0" height="12" rx="2" fill="#2a78d6"/>
+<text x="460.0" y="91" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">47.7 %</text>
+<text x="560" y="91" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 39 %</text>
+<text x="660" y="91" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">blue</text>
+<rect x="20" y="102" width="40" height="20" rx="3" fill="#08080F" stroke="#e4e3df"/>
+<text x="70" y="117" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#08080F</text>
+<rect x="150" y="106" width="83.3" height="12" rx="2" fill="#2a78d6"/>
+<text x="243.34520318391287" y="117" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">13.3 %</text>
+<text x="560" y="117" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 39 %</text>
+<text x="660" y="117" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">gap</text>
+<rect x="20" y="128" width="40" height="20" rx="3" fill="#0E1E36" stroke="#e4e3df"/>
+<text x="70" y="143" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#0E1E36</text>
+<rect x="150" y="132" width="46.5" height="12" rx="2" fill="#2a78d6"/>
+<text x="206.52073732718895" y="143" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">7.4 %</text>
+<text x="560" y="143" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 47 %</text>
+<text x="660" y="143" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">blue</text>
+<rect x="20" y="154" width="40" height="20" rx="3" fill="#77204F" stroke="#e4e3df"/>
+<text x="70" y="169" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#77204F</text>
+<rect x="150" y="158" width="42.7" height="12" rx="2" fill="#2a78d6"/>
+<text x="202.68747381650607" y="169" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">6.8 %</text>
+<text x="560" y="169" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 74 %</text>
+<text x="660" y="169" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">magenta</text>
+<rect x="20" y="180" width="40" height="20" rx="3" fill="#0F5784" stroke="#e4e3df"/>
+<text x="70" y="195" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#0F5784</text>
+<rect x="150" y="184" width="41.6" height="12" rx="2" fill="#2a78d6"/>
+<text x="201.5563468789275" y="195" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">6.6 %</text>
+<text x="560" y="195" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 42 %</text>
+<text x="660" y="195" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">blue</text>
+<rect x="20" y="206" width="40" height="20" rx="3" fill="#E52847" stroke="#e4e3df"/>
+<text x="70" y="221" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#E52847</text>
+<rect x="150" y="210" width="20.7" height="12" rx="2" fill="#2a78d6"/>
+<text x="180.67448680351907" y="221" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">3.3 %</text>
+<text x="560" y="221" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 82 %</text>
+<text x="660" y="221" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">red</text>
+<rect x="20" y="232" width="40" height="20" rx="3" fill="#875A4B" stroke="#e4e3df"/>
+<text x="70" y="247" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#875A4B</text>
+<rect x="150" y="236" width="15.9" height="12" rx="2" fill="#2a78d6"/>
+<text x="175.85462924172603" y="247" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">2.5 %</text>
+<text x="560" y="247" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 82 %</text>
+<text x="660" y="247" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">red</text>
+<rect x="20" y="258" width="40" height="20" rx="3" fill="#C58765" stroke="#e4e3df"/>
+<text x="70" y="273" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#C58765</text>
+<rect x="150" y="262" width="14.8" height="12" rx="2" fill="#2a78d6"/>
+<text x="174.75492249685797" y="273" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">2.3 %</text>
+<text x="560" y="273" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 87 %</text>
+<text x="660" y="273" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">orange</text>
+<rect x="20" y="284" width="40" height="20" rx="3" fill="#AEDE76" stroke="#e4e3df"/>
+<text x="70" y="299" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#AEDE76</text>
+<rect x="150" y="288" width="14.3" height="12" rx="2" fill="#2a78d6"/>
+<text x="174.28361960620026" y="299" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">2.3 %</text>
+<text x="560" y="299" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 95 %</text>
+<text x="660" y="299" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">green</text>
+<rect x="20" y="310" width="40" height="20" rx="3" fill="#7BB958" stroke="#e4e3df"/>
+<text x="70" y="325" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#7BB958</text>
+<rect x="150" y="314" width="12.6" height="12" rx="2" fill="#2a78d6"/>
+<text x="172.61834939254294" y="325" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">2.0 %</text>
+<text x="560" y="325" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 92 %</text>
+<text x="660" y="325" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">green</text>
+<rect x="20" y="336" width="40" height="20" rx="3" fill="#505892" stroke="#e4e3df"/>
+<text x="70" y="351" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#505892</text>
+<rect x="150" y="340" width="10.8" height="12" rx="2" fill="#2a78d6"/>
+<text x="170.77712609970675" y="351" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">1.7 %</text>
+<text x="560" y="351" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 73 %</text>
+<text x="660" y="351" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">blue</text>
+<rect x="20" y="362" width="40" height="20" rx="3" fill="#E73B74" stroke="#e4e3df"/>
+<text x="70" y="377" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#E73B74</text>
+<rect x="150" y="366" width="10.5" height="12" rx="2" fill="#2a78d6"/>
+<text x="170.45035609551738" y="377" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">1.7 %</text>
+<text x="560" y="377" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 77 %</text>
+<text x="660" y="377" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">magenta</text>
+<rect x="20" y="388" width="40" height="20" rx="3" fill="#B99121" stroke="#e4e3df"/>
+<text x="70" y="403" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#B99121</text>
+<rect x="150" y="392" width="10.3" height="12" rx="2" fill="#2a78d6"/>
+<text x="170.305823209049" y="403" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">1.6 %</text>
+<text x="560" y="403" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 87 %</text>
+<text x="660" y="403" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">orange</text>
+<rect x="20" y="414" width="40" height="20" rx="3" fill="#0E3BAD" stroke="#e4e3df"/>
+<text x="70" y="429" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">#0E3BAD</text>
+<rect x="150" y="418" width="4.6" height="12" rx="2" fill="#2a78d6"/>
+<text x="164.60620025136154" y="429" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">0.7 %</text>
+<text x="560" y="429" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">mean y 58 %</text>
+<text x="660" y="429" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">blue</text>
+<text x="20" y="470" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="bold">B. Palette constants (HEX_* in uPalette.pas)</text>
+<text x="20" y="498" font-size="11" fill="#52514e" text-anchor="start" font-weight="bold">Background</text>
+<rect x="150" y="482" width="90" height="28" rx="3" fill="#06385D" stroke="#e4e3df"/>
+<text x="150" y="524" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">BASE</text>
+<text x="240" y="524" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#06385D</text>
+<rect x="250" y="482" width="90" height="28" rx="3" fill="#021929" stroke="#e4e3df"/>
+<text x="250" y="524" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">BASE_DARK</text>
+<text x="340" y="524" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#021929</text>
+<rect x="350" y="482" width="90" height="28" rx="3" fill="#040509" stroke="#e4e3df"/>
+<text x="350" y="524" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">GAP</text>
+<text x="440" y="524" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#040509</text>
+<rect x="450" y="482" width="90" height="28" rx="3" fill="#0A0E17" stroke="#e4e3df"/>
+<text x="450" y="524" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">GAP2</text>
+<text x="540" y="524" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#0A0E17</text>
+<text x="20" y="560" font-size="11" fill="#52514e" text-anchor="start" font-weight="bold">Cool (Z0)</text>
+<rect x="150" y="544" width="90" height="28" rx="3" fill="#0B5A86" stroke="#e4e3df"/>
+<text x="150" y="586" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">TEAL_BLUE</text>
+<text x="240" y="586" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#0B5A86</text>
+<rect x="250" y="544" width="90" height="28" rx="3" fill="#3094C8" stroke="#e4e3df"/>
+<text x="250" y="586" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">SKY</text>
+<text x="340" y="586" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#3094C8</text>
+<rect x="350" y="544" width="90" height="28" rx="3" fill="#1D6490" stroke="#e4e3df"/>
+<text x="350" y="586" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">STEEL</text>
+<text x="440" y="586" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#1D6490</text>
+<rect x="450" y="544" width="90" height="28" rx="3" fill="#0631CE" stroke="#e4e3df"/>
+<text x="450" y="586" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">ROYAL</text>
+<text x="540" y="586" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#0631CE</text>
+<rect x="550" y="544" width="90" height="28" rx="3" fill="#1C2894" stroke="#e4e3df"/>
+<text x="550" y="586" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">INDIGO</text>
+<text x="640" y="586" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#1C2894</text>
+<text x="20" y="622" font-size="11" fill="#52514e" text-anchor="start" font-weight="bold">Transition (Z1)</text>
+<rect x="150" y="606" width="90" height="28" rx="3" fill="#59096C" stroke="#e4e3df"/>
+<text x="150" y="648" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">PURPLE</text>
+<text x="240" y="648" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#59096C</text>
+<rect x="250" y="606" width="90" height="28" rx="3" fill="#88235F" stroke="#e4e3df"/>
+<text x="250" y="648" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">PLUM</text>
+<text x="340" y="648" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#88235F</text>
+<rect x="350" y="606" width="90" height="28" rx="3" fill="#872A61" stroke="#e4e3df"/>
+<text x="350" y="648" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">MAGENTA</text>
+<text x="440" y="648" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#872A61</text>
+<rect x="450" y="606" width="90" height="28" rx="3" fill="#432B77" stroke="#e4e3df"/>
+<text x="450" y="648" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">VIOLET</text>
+<text x="540" y="648" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#432B77</text>
+<text x="20" y="684" font-size="11" fill="#52514e" text-anchor="start" font-weight="bold">Warm (Z2/Z3 left)</text>
+<rect x="150" y="668" width="90" height="28" rx="3" fill="#E2335E" stroke="#e4e3df"/>
+<text x="150" y="710" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">HOT_PINK</text>
+<text x="240" y="710" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#E2335E</text>
+<rect x="250" y="668" width="90" height="28" rx="3" fill="#F4202F" stroke="#e4e3df"/>
+<text x="250" y="710" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">PINK_RED</text>
+<text x="340" y="710" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#F4202F</text>
+<rect x="350" y="668" width="90" height="28" rx="3" fill="#FA3155" stroke="#e4e3df"/>
+<text x="350" y="710" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">CORAL</text>
+<text x="440" y="710" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#FA3155</text>
+<rect x="450" y="668" width="90" height="28" rx="3" fill="#E81D0C" stroke="#e4e3df"/>
+<text x="450" y="710" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">RED</text>
+<text x="540" y="710" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#E81D0C</text>
+<rect x="550" y="668" width="90" height="28" rx="3" fill="#E3865B" stroke="#e4e3df"/>
+<text x="550" y="710" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">ORANGE</text>
+<text x="640" y="710" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#E3865B</text>
+<rect x="650" y="668" width="90" height="28" rx="3" fill="#BDBB0E" stroke="#e4e3df"/>
+<text x="650" y="710" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">MUSTARD</text>
+<text x="740" y="710" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#BDBB0E</text>
+<text x="20" y="746" font-size="11" fill="#52514e" text-anchor="start" font-weight="bold">Fresh (Z3 right)</text>
+<rect x="150" y="730" width="90" height="28" rx="3" fill="#E9E23A" stroke="#e4e3df"/>
+<text x="150" y="772" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">YELLOW</text>
+<text x="240" y="772" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#E9E23A</text>
+<rect x="250" y="730" width="90" height="28" rx="3" fill="#B3F381" stroke="#e4e3df"/>
+<text x="250" y="772" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">LIME</text>
+<text x="340" y="772" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#B3F381</text>
+<rect x="350" y="730" width="90" height="28" rx="3" fill="#8BD250" stroke="#e4e3df"/>
+<text x="350" y="772" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">LEAF</text>
+<text x="440" y="772" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#8BD250</text>
+<rect x="450" y="730" width="90" height="28" rx="3" fill="#78BD7A" stroke="#e4e3df"/>
+<text x="450" y="772" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">MINT</text>
+<text x="540" y="772" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#78BD7A</text>
+<rect x="550" y="730" width="90" height="28" rx="3" fill="#B0D5B3" stroke="#e4e3df"/>
+<text x="550" y="772" font-size="9" fill="#52514e" text-anchor="start" font-weight="normal">PALE_GREEN</text>
+<text x="640" y="772" font-size="9" fill="#8a8984" text-anchor="end" font-weight="normal">#B0D5B3</text>
+</svg>

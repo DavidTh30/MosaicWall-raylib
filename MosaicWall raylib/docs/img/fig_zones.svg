@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="590" viewBox="0 0 760 590" font-family="Leelawadee UI, Tahoma, Segoe UI, sans-serif" role="img" aria-label="Zone map">
+<title>Zone map</title>
+<rect width="760" height="590" fill="#fcfcfb"/>
+<text x="20" y="28" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="bold">Zone map (9:16 frame)</text>
+<text x="20" y="48" font-size="12" fill="#8a8984" text-anchor="start" font-weight="normal">Band fill = measured mean colour of the reference. Right: what the generator does per zone.</text>
+<rect x="40" y="70.0" width="270" height="24.5" fill="#073A5E"/>
+<rect x="40" y="94.0" width="270" height="24.5" fill="#063457"/>
+<rect x="40" y="118.0" width="270" height="24.5" fill="#052B47"/>
+<rect x="40" y="142.0" width="270" height="24.5" fill="#052E4E"/>
+<rect x="40" y="166.0" width="270" height="24.5" fill="#052C4B"/>
+<rect x="40" y="190.0" width="270" height="24.5" fill="#062E4F"/>
+<rect x="40" y="214.0" width="270" height="24.5" fill="#052C4E"/>
+<rect x="40" y="238.0" width="270" height="24.5" fill="#063257"/>
+<rect x="40" y="262.0" width="270" height="24.5" fill="#072B45"/>
+<rect x="40" y="286.0" width="270" height="24.5" fill="#102342"/>
+<rect x="40" y="310.0" width="270" height="24.5" fill="#20274A"/>
+<rect x="40" y="334.0" width="270" height="24.5" fill="#0B355B"/>
+<rect x="40" y="358.0" width="270" height="24.5" fill="#2B3055"/>
+<rect x="40" y="382.0" width="270" height="24.5" fill="#472F50"/>
+<rect x="40" y="406.0" width="270" height="24.5" fill="#5D3C57"/>
+<rect x="40" y="430.0" width="270" height="24.5" fill="#623D59"/>
+<rect x="40" y="454.0" width="270" height="24.5" fill="#664356"/>
+<rect x="40" y="478.0" width="270" height="24.5" fill="#835E58"/>
+<rect x="40" y="502.0" width="270" height="24.5" fill="#916D4D"/>
+<rect x="40" y="526.0" width="270" height="24.5" fill="#84815B"/>
+<line x1="175.0" x2="175.0" y1="454.0" y2="550" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="107.5" y="506.0" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">red / pink</text>
+<text x="242.5" y="506.0" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">yellow / green</text>
+<rect x="40" y="70" width="270" height="480" fill="none" stroke="#0b0b0b" stroke-width="1.5"/>
+<line x1="314" x2="336" y1="178.0" y2="178.0" stroke="#8a8984"/>
+<text x="342" y="168.0" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="bold">Z0 Cool  (0 - 45 %)</text>
+<text x="342" y="184.0" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">accent density 25 % - soft edges: smoothstep +/- 6 % + fbm noise</text>
+<text x="342" y="200.0" font-size="10" fill="#8a8984" text-anchor="start" font-weight="normal">BASE 70, TEAL 18, SKY 5, STEEL 4, ROYAL 3</text>
+<line x1="34" x2="330" y1="286.0" y2="286.0" stroke="#0b0b0b" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="30" y="290.0" font-size="10" fill="#52514e" text-anchor="end" font-weight="normal">45%</text>
+<line x1="314" x2="336" y1="326.8" y2="326.8" stroke="#8a8984"/>
+<text x="342" y="316.8" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="bold">Z1 Transition  (45 - 62 %)</text>
+<text x="342" y="332.8" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">accent density 42 % - soft edges: smoothstep +/- 6 % + fbm noise</text>
+<text x="342" y="348.8" font-size="10" fill="#8a8984" text-anchor="start" font-weight="normal">BASE 50, TEAL 12, PURPLE/HOT_PINK/RED 10, ROYAL 8</text>
+<line x1="34" x2="330" y1="367.6" y2="367.6" stroke="#0b0b0b" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="30" y="371.6" font-size="10" fill="#52514e" text-anchor="end" font-weight="normal">62%</text>
+<line x1="314" x2="336" y1="410.8" y2="410.8" stroke="#8a8984"/>
+<text x="342" y="400.8" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="bold">Z2 Warm  (62 - 80 %)</text>
+<text x="342" y="416.8" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">accent density 72 % - soft edges: smoothstep +/- 6 % + fbm noise</text>
+<text x="342" y="432.8" font-size="10" fill="#8a8984" text-anchor="start" font-weight="normal">BASE 30, PLUM/MAGENTA/HOT_PINK 15, CORAL 10, VIOLET 8, MUSTARD 7</text>
+<line x1="34" x2="330" y1="454.0" y2="454.0" stroke="#0b0b0b" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="30" y="458.0" font-size="10" fill="#52514e" text-anchor="end" font-weight="normal">80%</text>
+<line x1="314" x2="336" y1="502.0" y2="502.0" stroke="#8a8984"/>
+<text x="342" y="492.0" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="bold">Z3 Bloom  (80 - 100 %)</text>
+<text x="342" y="508.0" font-size="11" fill="#52514e" text-anchor="start" font-weight="normal">accent density 98 % - soft edges: smoothstep +/- 6 % + fbm noise</text>
+<text x="342" y="524.0" font-size="10" fill="#8a8984" text-anchor="start" font-weight="normal">left: CORAL, PINK_RED, MAGENTA, RED, ORANGE</text>
+<text x="342" y="538.0" font-size="10" fill="#8a8984" text-anchor="start" font-weight="normal">right: LIME, LEAF, YELLOW, MINT, MUSTARD, PALE_GREEN</text>
+<text x="20" y="578" font-size="11" fill="#8a8984" text-anchor="start" font-weight="normal">Weights are relative within a zone; "BASE" tiles blend into the background (muted, faint rim).</text>
+</svg>
